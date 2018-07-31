@@ -8,7 +8,7 @@
 
 # Запуск docker
 
-Переходим в директорию postgres_interactions и запускаем процесс сборки контейнера
+Переходим в директорию *postgres_interactions* и запускаем процесс сборки контейнера
 
 <pre>
 sudo docker-compose --project-name postgres-client -f docker-compose.yml up --build -d
