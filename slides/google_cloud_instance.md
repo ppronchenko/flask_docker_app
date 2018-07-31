@@ -22,7 +22,7 @@ pip - это менеджер пакетов python.  С его помощью �
 
 <pre>
 git clone https://github.com/chentinghao/download_google_drive.git
-<pre>
+</pre>
 
 Запускаем скачивание файла - zip архива с данными.
 <pre>
