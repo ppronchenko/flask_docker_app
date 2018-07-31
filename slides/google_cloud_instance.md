@@ -2,7 +2,7 @@
 
 Как установить - по инструкции отсюда: https://cloud.google.com/compute/docs/quickstart-linux
 
-Далее в консоли выполнить:
+Далее в консоли, которая открывается прямо в браузере, выполнить:
 
 <pre>
 sudo apt-get update && sudo apt-get -y upgrade
