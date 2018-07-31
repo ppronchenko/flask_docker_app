@@ -6,6 +6,8 @@
 
 Данные нужно скопировать к себе на GoogleDrive и скачать
 
+Или скачать прямо из соревнования: https://www.kaggle.com/rounakbanik/the-movies-dataset
+
 # Запуск docker
 
 Переходим в директорию *postgres_interactions* и запускаем процесс сборки контейнера
