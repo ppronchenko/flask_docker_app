@@ -1,5 +1,11 @@
 #/bin/sh
 
+
+psql --host $APP_POSTGRES_HOST  -U postgres -c \
+    "DROP TABLE IF EXISTS links"
+psql --host $APP_POSTGRES_HOST  -U postgres -c \
+    "DROP TABLE IF EXISTS ratings"
+
 echo "Загружаем links.csv..."
 psql --host $APP_POSTGRES_HOST -U postgres -c '
   CREATE TABLE IF NOT EXISTS links (
