@@ -14,5 +14,5 @@ services:
       - APP_POSTGRES_HOST=postgres_host
       - APP_POSTGRES_PORT=5432
     volumes:
-      - /home/adzhumurat/movies-dataset:/data
+      - /tmp/data:/data
     links: [postgres_host]
