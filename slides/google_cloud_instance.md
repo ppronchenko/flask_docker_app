@@ -2,16 +2,22 @@
 
 Как установить - по инструкции отсюда: https://cloud.google.com/compute/docs/quickstart-linux
 
-Внимание! В инструкции установка Debian, а нам нужна Ubuntu 18.04.
+Внимание! В инструкции установка Debian, а нам нужна Ubuntu 18.04. Эта опция выбирается в меню Boot Disk
+
+![выбор ОС](https://habrastorage.org/webt/vl/dt/3m/vldt3mgct8jq3n6n9oa3pmyug_a.png "boot disk")
 
 После установики ваш инстанс можно будет найти на этой странице https://console.cloud.google.com/compute/instances
 
 ![страница с инстансами](https://habrastorage.org/webt/cb/fx/qz/cbfxqzxqcdo0atxs9eg_c-t3jby.png "Google cloud instances")
 
-Далее нужно перейти в инстанс и открыть консоль (прямо в браузере)
+Далее нужно перейти в инстанс и открыть консоль (прямо в браузере) - то есть выбрать пункт "Open in browser window".
 
 
-![страница с инстансами](https://habrastorage.org/webt/sl/up/h1/sluph1qjdyzjdct31mmsfr0lwbo.png "Instance console")
+![запуск консоли](https://habrastorage.org/webt/sl/up/h1/sluph1qjdyzjdct31mmsfr0lwbo.png "Instance console")
+
+Когда команда выпонится, вы увидите консоль Вашей удалённой машины с Ubuntu 18 на борту
+
+![ubuntu console](https://habrastorage.org/webt/n5/s1/ll/n5s1llvkezhubqqsv3ulmk_8du0.png "Консоль Ubuntu")
 
 Выполнить в консоли команду:
 
