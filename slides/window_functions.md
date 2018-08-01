@@ -13,7 +13,6 @@ SELECT
 FROM (SELECT DISTINCT userId, movieId, rating FROM ratings WHERE userId <>1 LIMIT 1000) as sample 
 ORDER BY userId, rating DESC, movie_rank LIMIT 20;
 
-postgres=# SELECT userId, movieId, rating, SUM(1) OVER (PARTITION BY userId) as movie_rank from (SELECT DISTINCT userId, movieId, rating FROM ratings WHERE userId <>1 LIMIT 1000) as sample ORDER BY userId, rating DESC, movie_rank LIMIT 20;
 userid | movieid | rating | movie_rank 
 --------+---------+--------+------------
       2 |    1356 |      5 |          1
