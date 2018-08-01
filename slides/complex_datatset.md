@@ -73,7 +73,7 @@ postgres-# LIMIT 5;
 
 Видно, что в результирующем запросе столбцы из обеих таблиц
 
-INNER JOIN выпиливает строки, для которых не нашлось ключа. LEFT JOIN (как и RIGHT JOIN) такие строки оставляет:
+INNER JOIN выпиливает строки, для которых не нашлось ключа. LEFT JOIN (как и RIGHT JOIN) такие строки оставляет - , например, можем выгрузить фильмы без оценок.
 
 <pre>
 postgres=# SELECT * FROM public.links LEFT JOIN public.ratings ON links.movieid=ratings.movieid WHERE ratings.movieid IS NULL LIMIT 5;
