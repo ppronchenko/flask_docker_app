@@ -6,7 +6,14 @@
 
 После установики ваш инстанс можно будет найти на этой странице https://console.cloud.google.com/compute/instances
 
-Далее в консоли, которая открывается прямо в браузере, выполнить:
+![страница с инстансами](https://habrastorage.org/webt/cb/fx/qz/cbfxqzxqcdo0atxs9eg_c-t3jby.png "Google cloud instances")
+
+Далее нужно перейти в инстанс и открыть консоль (прямо в браузере)
+
+
+![страница с инстансами](https://habrastorage.org/webt/sl/up/h1/sluph1qjdyzjdct31mmsfr0lwbo.png "Instance console")
+
+Выполнить в консоли команду:
 
 <pre>
 sudo apt-get update && sudo apt-get -y upgrade
