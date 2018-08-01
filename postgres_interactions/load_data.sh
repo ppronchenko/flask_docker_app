@@ -27,4 +27,4 @@ psql --host $APP_POSTGRES_HOST -U postgres -c '
   );'
 
 psql --host $APP_POSTGRES_HOST -U postgres -c \
-    "\\copy ratings FROM '/data/ratings.csv' DELIMITER ',' CSV HEADER"
+    "\\copy ratings FROM '/data/ratings_small.csv' DELIMITER ',' CSV HEADER"
