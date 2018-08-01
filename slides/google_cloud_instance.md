@@ -1,4 +1,4 @@
-# Установка
+# Установка Ubuntu 18.04 в Google Cloud
 
 Как установить - по инструкции отсюда: https://cloud.google.com/compute/docs/quickstart-linux
 
@@ -10,8 +10,11 @@
 
 ![страница с инстансами](https://habrastorage.org/webt/cb/fx/qz/cbfxqzxqcdo0atxs9eg_c-t3jby.png "Google cloud instances")
 
-Далее нужно перейти в инстанс и открыть консоль (прямо в браузере) - то есть выбрать пункт "Open in browser window".
+# Подготовка инстанса к работе
 
+Подготовку нужно выполнить всего один раз.
+
+Далее нужно перейти в инстанс и открыть консоль (прямо в браузере) - то есть выбрать пункт "Open in browser window".
 
 ![запуск консоли](https://habrastorage.org/webt/sl/up/h1/sluph1qjdyzjdct31mmsfr0lwbo.png "Instance console")
 
@@ -28,10 +31,10 @@ sudo apt-get update && sudo apt-get -y upgrade
 Эта команда обновит пакетный менеджер apt-get. После этотго установить пакет pip:
 
 <pre>
-sudo apt install python-pip
+sudo apt install python-pip; sudo apt-get install unzip
 </pre>
 
-pip - это менеджер пакетов python.  С его помощью можно будет устанавливать python библиотеки.
+pip - это менеджер пакетов python, его помощью можно будет устанавливать python библиотеки. unzip - программа для распаковки архивов.
 
 Теперь zip-архив с данными, который я заранее залил на Google Drive нужно перенести в виртуалку Google Cloud. Для этого  склонируем полезный репозиторий
 
@@ -44,19 +47,13 @@ git clone https://github.com/chentinghao/download_google_drive.git
 python download_google_drive/download_gdrive.py 1YiclJxLxWZcHX8ObNiQaS0ZOVyyD7TX4 data.zip
 </pre>
 
-И распаковываем архив
-
-<pre>
-sudo apt-get install unzip; unzip data.zip -d  /tmp/data
-</pre>
-
 Установим docker и docker-compose
 
 <pre>
 sudo apt-get install docker docker-compose
 </pre>
 
-Теперь скачивает репозиторий курса Нетологии
+Теперь скачиваем репозиторий курса Нетологии
 
 <pre>
 dju0204@instance-ubuntu:~$ git clone https://github.com/Dju999/flask_docker_app.git
@@ -68,12 +65,38 @@ Unpacking objects: 100% (81/81), done.
 dju0204@instance-ubuntu:~$ cd flask_docker_app/postgres_interactions
 </pre>
 
+Подготовка завершена! Один раз проделав этот пункт, можно к нему больше не возвращаться
+
+# Работа в инстансе
+
+Сначала распаковываем архив с данными.
+
+Примечание: т.к. мы распаковываем в директорию /tmp, то файлы будут удаляться при каждом рестарте инстанса. Нужно будет повторно распаковывать архив с помощью этой команды после каждого рестарта.
+
+<pre>
+unzip data.zip -d  /tmp/data
+</pre>
+
+Мы увидим процесс извлечения данных
+
+<pre>
+Archive:  data.zip
+  inflating: /tmp/data/ratings.csv   
+  inflating: /tmp/data/ratings_small.csv  
+  inflating: /tmp/data/links.csv     
+  inflating: /tmp/data/links_small.csv  
+  inflating: /tmp/data/keywords.csv  
+  inflating: /tmp/data/movies_metadata.csv  
+  inflating: /tmp/data/credits.csv  
+</pre>
+
 Переходим в директорию занятия
 <pre>
 cd flask_docker_app/postgres_interactions
 </pre>
 
-Запускаем построение контейнера
+Запускаем построение контейнера. Внимание! Построение контейнера запускаем только один раз, при самом первом запуске инстанса.
+
 <pre>
 sudo docker-compose --project-name postgres-client -f docker-compose.yml up --build -d
 </pre>
