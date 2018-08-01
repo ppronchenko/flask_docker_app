@@ -8,6 +8,8 @@
 
 Или скачать прямо из соревнования: https://www.kaggle.com/rounakbanik/the-movies-dataset
 
+Можно воспользоваться инструкциями отсюда: https://github.com/Dju999/flask_docker_app/edit/master/slides/google_cloud_instance.md , пункт "Подготовка инстанса к работе"
+
 # Запуск docker
 
 Переходим в директорию *postgres_interactions* и запускаем процесс сборки контейнера
